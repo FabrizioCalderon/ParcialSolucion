@@ -1,14 +1,19 @@
 @use '../base/variables' as v;
 @use '../base/theme' as t;
 @use '../base/mixins' as m;
+@use '../base/theme' as t;
 
 body{
-  background-color: #23374D;
+  background-color: t.$primary-color;
 }
 
-#photos-showcase>h3{
-  background-color: rgba(24, 38, 52, 0.5); /* El último valor (0.5) representa la opacidad (50%) */
-  color: white; 
+#photos-showcase{
+
+
+    h3{
+      background-color: t.$secondary-color; /* El último valor (0.5) representa la opacidad (50%) */
+      color: white; 
+}
 
 }
 
@@ -23,23 +28,39 @@ display: grid;
 
 }
 
-.photo-set>figure>img{
+.photo-set{
+  
+  img{
     width: 35rem;
     height: 20rem;
     object-fit: cover;
     transition: transform 0.3s;
+  }
+
+  img:hover{
+    transform: scale(2); 
+  }
+
+  span{
+    visibility: hidden;
+  }
+
+  span:hover{
+      visibility: visible;
+  }
+  
 }
 
-.photo-set>figure>img:hover{
-  transform: scale(2); 
-}
+.photo-set{
+  
+  }
 
 .photo-set>figure>span{
-  visibility: hidden;
+  
 }
 
 .photo-set>figure>span:hover{
-  visibility: visible;
+  
 }
 
 @mixin phone {
