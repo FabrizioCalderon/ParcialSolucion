@@ -1,0 +1,68 @@
+@use '../base/variables' as v;
+@use '../base/theme' as t;
+@use '../base/mixins' as m;
+
+body{
+  background-color: #23374D;
+}
+
+#photos-showcase>h3{
+  background-color: rgba(24, 38, 52, 0.5); /* El último valor (0.5) representa la opacidad (50%) */
+  color: white; 
+
+}
+
+.photo-set{
+    
+    
+display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Ejemplo de tres columnas con tamaños flexibles */
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+
+}
+
+.photo-set>figure>img{
+    width: 35rem;
+    height: 20rem;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.photo-set>figure>img:hover{
+  transform: scale(2); 
+}
+
+.photo-set>figure>span{
+  visibility: hidden;
+}
+
+.photo-set>figure>span:hover{
+  visibility: visible;
+}
+
+@mixin phone {
+  @media (min-width: v.$device-phone) {
+      @content;
+  }
+}
+
+
+@mixin desktop {
+  @media (min-width: v.$device-laptop) {
+      @content;
+  }
+}
+
+@mixin maxTablet {
+  @media (max-width: v.$device-tablet) {
+      @content;
+  }
+}
+
+@mixin maxDesktop {
+  @media (max-width: v.$device-laptop) {
+      @content;
+  }
+}

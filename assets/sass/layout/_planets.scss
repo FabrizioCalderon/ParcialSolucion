@@ -1,0 +1,71 @@
+@use '../base/variables' as v;
+@use '../base/theme' as t;
+@use '../base/mixins' as m;
+
+#what-can-you-see{
+    @include  m.dimensions(100%);
+    min-height: 100vh;
+    @include m.flexbox(center, center, column);
+    padding: 8rem 0;
+
+    h3{
+        margin: 0;
+        margin-bottom: 2rem;
+    }
+
+    .cards-container{
+        @include m.flexbox(center, center);
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+
+        article{
+            flex-shrink: 0;
+            @include m.dimensions(30%, 30%);
+            margin: 5px;
+            padding: 5px;
+            perspective: 1000px;
+
+            figure, .info{
+                position: relative;
+                @include m.dimensions(100%, 100%);
+                box-shadow: 0 4px 20px rgba(#000, 0.2);
+                @include m.card-transition(550ms, cubic-bezier(.1, .22, .8, 1.13));
+                transform-style: preserve-3d;
+
+                &:hover{
+                    transform: rotateY(180deg);
+                }
+            }
+
+            figure, .info{
+                backface-visibility: hidden;
+            }
+
+            figure{
+                background-color: t.$primary-color-dark;
+                img{
+                    @include m.card-img(100%, 75%);
+                    margin-left: 1em;
+                    margin-right: 5em;
+                    padding: 1rem;
+                }
+            }
+            .info{
+                display: grid;
+                place-items: center;
+                transform: rotateY(180deg);
+                h4{
+                    margin: 0;
+                    text-align: center;
+                    font-family: t.$title-font;
+                }
+                p{
+                    font-family: t.$text-font;
+                    font-size: t.$font-size;
+                    padding: 1rem;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,217 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+p {
+  color: #182634;
+  font-size: 2rem;
+}
+
+.container {
+  width: 95%;
+  max-width: 180rem;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+picture {
+  width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  font-family: "Abel", sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 3.4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.6rem;
+}
+
+#what-can-you-see {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8rem 0;
+}
+#what-can-you-see h3 {
+  margin: 0;
+  margin-bottom: 2rem;
+}
+#what-can-you-see .cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+#what-can-you-see .cards-container article {
+  flex-shrink: 0;
+  width: 30%;
+  height: 30%;
+  margin: 5px;
+  padding: 5px;
+  perspective: 1000px;
+}
+#what-can-you-see .cards-container article figure, #what-can-you-see .cards-container article .info {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 550ms cubic-bezier(0.1, 0.22, 0.8, 1.13);
+  transform-style: initial;
+  transform-style: preserve-3d;
+}
+#what-can-you-see .cards-container article figure:hover, #what-can-you-see .cards-container article .info:hover {
+  transform: rotateY(180deg);
+}
+#what-can-you-see .cards-container article figure, #what-can-you-see .cards-container article .info {
+  backface-visibility: hidden;
+}
+#what-can-you-see .cards-container article figure {
+  background-color: #182634;
+}
+#what-can-you-see .cards-container article figure img {
+  width: 100%;
+  height: 75%;
+  border-radius: 15px;
+  object-fit: fill;
+  margin-left: 1em;
+  margin-right: 5em;
+  padding: 1rem;
+}
+#what-can-you-see .cards-container article .info {
+  display: grid;
+  place-items: center;
+  transform: rotateY(180deg);
+}
+#what-can-you-see .cards-container article .info h4 {
+  margin: 0;
+  text-align: center;
+  font-family: "Abel", sans-serif;
+}
+#what-can-you-see .cards-container article .info p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+body {
+  background-color: #23374D;
+}
+
+#photos-showcase > h3 {
+  background-color: rgba(24, 38, 52, 0.5); /* El último valor (0.5) representa la opacidad (50%) */
+  color: white;
+}
+
+.photo-set {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Ejemplo de tres columnas con tamaños flexibles */
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.photo-set > figure > img {
+  width: 35rem;
+  height: 20rem;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.photo-set > figure > img:hover {
+  transform: scale(2);
+}
+
+.photo-set > figure > span {
+  visibility: hidden;
+}
+
+.photo-set > figure > span:hover {
+  visibility: visible;
+}
+
+/*# sourceMappingURL=style.css.map */
